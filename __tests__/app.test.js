@@ -47,7 +47,6 @@ describe('refactory routes', () => {
 
   it('should be able to update an order', async () => {
     const order = await Order.insert({ product: 'Widget', quantity: 1 });
-    console.log('order', order);
     const res = await request(app)
       .patch(`/api/v1/orders/${order.id}`)
       .send({ product: 'Thingamajig', quantity: 2 });
